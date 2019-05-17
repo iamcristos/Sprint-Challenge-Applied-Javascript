@@ -4,16 +4,21 @@ class Carousel {
         this.images = document.querySelectorAll('img');
         this.btnRight = document.querySelector('.right-button');
         this.btnLeft = document.querySelector('.left-button');
-        this.index = 1
+        this.index = 0
         this.btnRight.addEventListener('click', ()=>this.rightSlide())
+        this.btnLeft.addEventListener('click', ()=>this.rightSlide())
     }
 
     rightSlide() {
         this.hideSlide()
         const imageArray =Array.from(this.images)
-        this.index < 1 ? this.index++ : this.index--
+        this.index <= 1 ? this.index+=2 : this.index--
         imageArray[this.index].classList.add('show-image')
     }
+
+    // leftSlide() {
+    //     this.hideSlide()
+    // }
 
     hideSlide() {
         this.images.forEach(image=> image.classList.remove('show-image'))
