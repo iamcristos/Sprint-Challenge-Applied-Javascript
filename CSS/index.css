@@ -114,6 +114,7 @@ body {
   cursor: pointer;
 }
 .header {
+  z-index: 4;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -292,17 +293,18 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
-  z-index: 3;
+  z-index: 1;
 }
 .carousel .right-button {
   top: 50%;
   right: 25px;
   transform: translate(0, -50%);
-  z-index: 3;
+  z-index: 1;
 }
 .carousel img {
   width: 100%;
   display: none;
+  z-index: -2;
 }
 .carousel .show-image {
   display: block;

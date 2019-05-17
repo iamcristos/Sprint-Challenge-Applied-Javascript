@@ -1,36 +1,33 @@
 class Carousel {
-    constructor(domElement) {
-        this.domElement = domElement;
+    constructor() {
         this.images = document.querySelectorAll('img');
         this.btnRight = document.querySelector('.right-button');
         this.btnLeft = document.querySelector('.left-button');
         this.index = 0
-        this.btnRight.addEventListener('click', ()=>this.rightSlide())
-        this.btnLeft.addEventListener('click', ()=>this.leftSlide())
+        this.btnRight.addEventListener('click', (e)=>this.slide(e));
+        this.btnLeft.addEventListener('click', (e)=>this.slide(e)); 
     }
-
-    rightSlide() {
+    
+    slide(e) {
         this.hideSlide()
-        const imageArray =Array.from(this.images)
-        this.index <= 1 ? this.index+=2 : this.index--
-        imageArray[this.index].classList.add('show-image');
-        TweenMax.from(".show-image", 2, {x:-100,opacity: 0.1})
-    }
-
-    leftSlide() {
-        this.hideSlide()
-        const imageArray =Array.from(this.images)
-        this.index <= 1 ? this.index+=2 : this.index--
-        imageArray[this.index].classList.add('show-image');
-        TweenMax.from(".show-image", 2, {x:100,opacity: 0.1})
+        this.showSlide()
+        e.target.classList.contains('right-button')
+            ? TweenMax.from(".show-image", 2, {x:-100,opacity: 0.1})
+            : TweenMax.from(".show-image", 2, {x:100,opacity: 0.1})
     }
 
     hideSlide() {
         this.images.forEach(image=> image.classList.remove('show-image'))
     }
+
+    showSlide () {
+        const imageArray =Array.from(this.images)
+        this.index <= 1 ? this.index+=2 : this.index--
+        imageArray[this.index].classList.add('show-image');
+    }
 }
 
-let carousel = document.querySelectorAll('img');
+let carousel = document.querySelector('.carousel');
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the left and right buttons

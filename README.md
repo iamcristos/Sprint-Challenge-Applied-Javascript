@@ -40,15 +40,16 @@ Edit this document to include your answers after each question. Make sure to lea
 
 3. What is an event listener?
 
-    An event listener is a function that executes when certain events take place; that is when the user performs certain action, the web page responds by doing something.
+    An event listener is a function that executes when certain events take place; that is; when a user performs certain action, the web page responds by doing something.
 
 4. Why would we convert a NodeList into an Array?
 
-    NodeList only allows forEach method, by converting it to an array we have the choice to use all array methods like map, reduce, filter.
+    NodeList only allows forEach method, by converting it to an array we have the choice to use all array methods like map, reduce, filter, which inturn allows us perform certain dynamic functions like getting data from an api and dynamically populating them etc.
 
 5. What is a component?
 
-    Component are stand alone layout of our webpage.
+    Component are stand alone layout of our webpage. An example are navbar, side draw.
+
 ### Git Set up
 
 * [ ] Fork the project into your GitHub user account
