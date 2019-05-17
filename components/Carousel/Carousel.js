@@ -1,8 +1,9 @@
 class Carousel {
-    constructor() {
-        this.images = document.querySelectorAll('img');
-        this.btnRight = document.querySelector('.right-button');
-        this.btnLeft = document.querySelector('.left-button');
+    constructor(domElement) {
+        this.domElement = domElement;
+        this.images = this.domElement.querySelectorAll('img');
+        this.btnRight =this.domElement.querySelector('.right-button');
+        this.btnLeft = this.domElement.querySelector('.left-button');
         this.index = 0
         this.btnRight.addEventListener('click', (e)=>this.slide(e));
         this.btnLeft.addEventListener('click', (e)=>this.slide(e)); 
